@@ -13,8 +13,8 @@ public class ComedianService {
     @Autowired
     ComedianRepository comedianRepository;
 
-    public Comedian searchById(String id) {
-        return comedianRepository.searchById(Integer.parseInt(id)).orElse(new Comedian());
+    public Comedian searchById(int id) {
+        return comedianRepository.searchById(id).orElse(new Comedian());
     }
 
     public List<Comedian> searchAll() {
@@ -29,7 +29,7 @@ public class ComedianService {
         return comedianRepository.updateById(comedian);
     }
 
-    void deleteById(Comedian comedian) {
-        comedianRepository.deleteById(comedian);
+    public void deleteById(int id) {
+        comedianRepository.deleteById(id);
     }
 }

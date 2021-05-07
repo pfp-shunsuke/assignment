@@ -17,8 +17,8 @@ public class ComediansController {
 
     @DeleteMapping("{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    void sampleDelete(@PathVariable Integer id) {
-
+    void deleteById(@PathVariable int id) {
+        comedianService.deleteById(id);
     }
 
     @GetMapping("/talents")
@@ -27,7 +27,7 @@ public class ComediansController {
     }
 
     @GetMapping("/talents/{id}")
-    Comedian getById(@PathVariable String id) {
+    Comedian getById(@PathVariable int id) {
         return comedianService.searchById(id);
     }
 

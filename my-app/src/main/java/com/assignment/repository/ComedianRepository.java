@@ -22,5 +22,5 @@ public interface ComedianRepository {
     boolean updateById(Comedian comedian);
 
     @Delete("delete from comedians where id = #{id}")
-    void deleteById(Comedian comedian);
+    void deleteById(int id);
 }

@@ -4,6 +4,6 @@ import lombok.Data;
 
 @Data
 public class Comedian {
-    private Integer id;
+    private int id;
     private String name;
 }
