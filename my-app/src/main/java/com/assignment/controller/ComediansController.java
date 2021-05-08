@@ -2,6 +2,7 @@ package com.assignment.controller;
 
 import com.assignment.entity.Comedian;
 import com.assignment.service.ComedianService;
+import com.fasterxml.jackson.annotation.JsonInclude;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -31,11 +32,13 @@ public class ComediansController {
     }
 
     @GetMapping("/talents")
+    @JsonInclude(JsonInclude.Include.NON_EMPTY)
     List<Comedian> getAll() {
         return comedianService.searchAll();
     }
 
     @GetMapping("/talents/{id}")
+    @JsonInclude(JsonInclude.Include.NON_EMPTY)
     Comedian getById(@PathVariable int id) {
         return comedianService.searchById(id);
     }

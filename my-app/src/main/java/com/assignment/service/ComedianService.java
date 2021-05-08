@@ -17,7 +17,7 @@ public class ComedianService {
     ComedianRepository comedianRepository;
 
     public Comedian searchById(int id) {
-        return comedianRepository.searchById(id).orElse(new Comedian());
+        return comedianRepository.searchById(id);
     }
 
     public List<Comedian> searchAll() {

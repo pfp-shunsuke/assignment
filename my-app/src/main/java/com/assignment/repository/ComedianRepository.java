@@ -4,12 +4,11 @@ import com.assignment.entity.Comedian;
 import org.apache.ibatis.annotations.*;
 
 import java.util.List;
-import java.util.Optional;
 
 @Mapper
 public interface ComedianRepository {
     @Select("select id, name from comedians where id = #{id}")
-    Optional<Comedian> searchById(int id);
+    Comedian searchById(int id);
 
     @Select("select * from comedians")
     List<Comedian> searchAll();
