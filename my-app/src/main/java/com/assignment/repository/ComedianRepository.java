@@ -15,8 +15,7 @@ public interface ComedianRepository {
     List<Comedian> searchAll();
 
     @Insert("insert into comedians (name) values (#{name})")
-    @Options(useGeneratedKeys = true, keyProperty = "id")
-    void create(Comedian comedian);
+    void create(String name);
 
     @Update("update comedians set name = #{name} where id = #{id}")
     boolean updateById(Comedian comedian);

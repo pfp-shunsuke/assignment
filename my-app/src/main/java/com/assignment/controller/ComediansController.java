@@ -31,9 +31,14 @@ public class ComediansController {
         return comedianService.searchById(id);
     }
 
-    @RequestMapping("/")
-    String home() {
-        return "Hello World!";
+    /**
+     * @param names 芸人リスト
+     * @apiNote streamを使ってみたかったので、パラメーターはリスト
+     */
+    @PostMapping
+    @ResponseStatus(HttpStatus.CREATED)
+    void create(@RequestBody List<String> names) {
+        comedianService.create(names);
     }
 
 }

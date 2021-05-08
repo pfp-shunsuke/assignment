@@ -4,10 +4,13 @@ import com.assignment.entity.Comedian;
 import com.assignment.repository.ComedianRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
+import java.util.Objects;
 
 @Service
+@Transactional
 public class ComedianService {
 
     @Autowired
@@ -21,8 +24,10 @@ public class ComedianService {
         return comedianRepository.searchAll();
     }
 
-    void create(Comedian comedian) {
-        comedianRepository.create(comedian);
+    public void create(List<String> names) {
+        // streamを使いたい
+        names.stream().filter(Objects::nonNull)
+                .forEach(comedianRepository::create);
     }
 
     boolean updateById(Comedian comedian) {
@@ -32,4 +37,5 @@ public class ComedianService {
     public void deleteById(int id) {
         comedianRepository.deleteById(id);
     }
+
 }
