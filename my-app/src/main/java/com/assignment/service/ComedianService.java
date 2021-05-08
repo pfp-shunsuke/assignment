@@ -30,7 +30,7 @@ public class ComedianService {
                 .forEach(comedianRepository::create);
     }
 
-    boolean updateById(Comedian comedian) {
+    public boolean updateById(Comedian comedian) {
         return comedianRepository.updateById(comedian);
     }
 
