@@ -1,8 +1,8 @@
 package com.assignment.service;
 
 import com.assignment.entity.Comedian;
+import com.assignment.entity.MyException;
 import com.assignment.repository.ComedianRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -13,8 +13,11 @@ import java.util.Objects;
 @Transactional
 public class ComedianService {
 
-    @Autowired
-    ComedianRepository comedianRepository;
+    final ComedianRepository comedianRepository;
+
+    ComedianService(ComedianRepository repository) {
+        this.comedianRepository = repository;
+    }
 
     public Comedian searchById(int id) {
         return comedianRepository.searchById(id);
@@ -30,8 +33,13 @@ public class ComedianService {
                 .forEach(comedianRepository::create);
     }
 
-    public boolean updateById(Comedian comedian) {
-        return comedianRepository.updateById(comedian);
+    public void updateById(Comedian comedian) {
+        boolean ret = comedianRepository.updateById(comedian);
+
+        if (!ret) {
+            throw new MyException("更新は行われませんでした");
+        }
+
     }
 
     public void deleteById(int id) {

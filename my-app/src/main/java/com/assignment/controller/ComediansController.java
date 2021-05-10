@@ -3,7 +3,6 @@ package com.assignment.controller;
 import com.assignment.entity.Comedian;
 import com.assignment.service.ComedianService;
 import com.fasterxml.jackson.annotation.JsonInclude;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -14,15 +13,16 @@ import java.util.List;
 @RequestMapping("/comedians")
 public class ComediansController {
 
-    @Autowired
-    ComedianService comedianService;
+    final ComedianService comedianService;
+
+    public ComediansController(ComedianService comedianService) {
+        this.comedianService = comedianService;
+    }
 
     @PutMapping
     ResponseEntity<Object> putById(@RequestBody Comedian comedian) {
-        HttpStatus status = comedianService.updateById(comedian) ?
-                HttpStatus.NO_CONTENT : HttpStatus.INTERNAL_SERVER_ERROR;
-        System.out.println(status);
-        return ResponseEntity.status(status).body(null);
+        comedianService.updateById(comedian);
+        return ResponseEntity.status(HttpStatus.NO_CONTENT).body(null);
     }
 
     @DeleteMapping("{id}")
