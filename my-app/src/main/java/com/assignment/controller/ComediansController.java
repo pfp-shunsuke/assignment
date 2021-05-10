@@ -31,13 +31,13 @@ public class ComediansController {
         comedianService.deleteById(id);
     }
 
-    @GetMapping("/talents")
+    @GetMapping
     @JsonInclude(JsonInclude.Include.NON_EMPTY)
     List<Comedian> getAll() {
         return comedianService.searchAll();
     }
 
-    @GetMapping("/talents/{id}")
+    @GetMapping("{id}")
     @JsonInclude(JsonInclude.Include.NON_EMPTY)
     Comedian getById(@PathVariable int id) {
         return comedianService.searchById(id);
