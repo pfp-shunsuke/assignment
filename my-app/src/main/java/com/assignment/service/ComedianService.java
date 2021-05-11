@@ -1,7 +1,6 @@
 package com.assignment.service;
 
 import com.assignment.entity.Comedian;
-import com.assignment.entity.MyException;
 import com.assignment.repository.ComedianRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -32,12 +31,8 @@ public class ComedianService {
     }
 
     public void updateById(Comedian comedian) {
-        boolean ret = comedianRepository.updateById(comedian);
 
-        if (!ret) {
-            throw new MyException("更新は行われませんでした");
-        }
-
+        comedianRepository.updateById(comedian);
     }
 
     public void deleteById(int id) {
