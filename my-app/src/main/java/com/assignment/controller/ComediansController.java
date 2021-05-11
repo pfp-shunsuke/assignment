@@ -3,6 +3,7 @@ package com.assignment.controller;
 import com.assignment.entity.Comedian;
 import com.assignment.service.ComedianService;
 import com.fasterxml.jackson.annotation.JsonInclude;
+import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -11,13 +12,10 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/comedians")
+@RequiredArgsConstructor
 public class ComediansController {
 
     final ComedianService comedianService;
-
-    public ComediansController(ComedianService comedianService) {
-        this.comedianService = comedianService;
-    }
 
     @PutMapping
     ResponseEntity<Object> putById(@RequestBody Comedian comedian) {

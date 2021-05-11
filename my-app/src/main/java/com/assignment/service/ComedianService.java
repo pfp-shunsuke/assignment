@@ -3,6 +3,7 @@ package com.assignment.service;
 import com.assignment.entity.Comedian;
 import com.assignment.entity.MyException;
 import com.assignment.repository.ComedianRepository;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -11,13 +12,10 @@ import java.util.Objects;
 
 @Service
 @Transactional
+@RequiredArgsConstructor
 public class ComedianService {
 
     final ComedianRepository comedianRepository;
-
-    ComedianService(ComedianRepository repository) {
-        this.comedianRepository = repository;
-    }
 
     public Comedian searchById(int id) {
         return comedianRepository.searchById(id);
