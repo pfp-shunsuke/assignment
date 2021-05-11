@@ -1,6 +1,6 @@
 package com.assignment.repository;
 
-import com.assignment.entity.Comedian;
+import com.assignment.domain.Comedian;
 import org.apache.ibatis.annotations.*;
 
 import java.util.List;

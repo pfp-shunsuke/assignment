@@ -1,4 +1,4 @@
-package com.assignment.entity;
+package com.assignment.domain;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Setter;

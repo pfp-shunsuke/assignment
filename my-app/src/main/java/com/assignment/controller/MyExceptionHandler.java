@@ -1,6 +1,6 @@
 package com.assignment.controller;
 
-import com.assignment.entity.ErrorResponseBody;
+import com.assignment.domain.ErrorResponseBody;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

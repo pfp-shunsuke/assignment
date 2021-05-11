@@ -1,6 +1,6 @@
 package com.assignment.controller;
 
-import com.assignment.entity.Comedian;
+import com.assignment.domain.Comedian;
 import com.assignment.service.ComedianService;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.RequiredArgsConstructor;

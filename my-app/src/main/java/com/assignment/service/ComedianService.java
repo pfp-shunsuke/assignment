@@ -1,6 +1,6 @@
 package com.assignment.service;
 
-import com.assignment.entity.Comedian;
+import com.assignment.domain.Comedian;
 import com.assignment.repository.ComedianRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
