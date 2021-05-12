@@ -7,6 +7,7 @@ import lombok.Value;
  * 芸人 Model
  */
 @Value
+@NonNull
 public class Comedian {
     // ID
     int id;
