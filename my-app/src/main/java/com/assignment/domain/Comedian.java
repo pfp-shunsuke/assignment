@@ -1,14 +1,15 @@
 package com.assignment.domain;
 
-import lombok.Data;
+import lombok.NonNull;
+import lombok.Value;
 
 /**
  * 芸人 Model
  */
-@Data
+@Value
 public class Comedian {
     // ID
-    private int id;
+    int id;
     // 名前
-    private String name;
+    String name;
 }
