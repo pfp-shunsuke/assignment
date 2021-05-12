@@ -14,6 +14,7 @@ import java.util.List;
 @RequestMapping("/comedians")
 @RequiredArgsConstructor
 public class ComediansController {
+    private final ComedianService comedianService;
 
     final ComedianService comedianService;
 
