@@ -1,0 +1,9 @@
+###PK指定更新
+PUT http://localhost:8080/comedians
+Accept: application/json
+Content-Type:application/json
+
+{
+  "id": 1,
+  "name": "松本人志"
+}

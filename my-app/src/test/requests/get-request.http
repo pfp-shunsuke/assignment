@@ -1,0 +1,8 @@
+###全件取得
+GET http://localhost:8080/comedians/
+Accept: application/json
+
+###PK指定取得
+GET http://localhost:8080/comedians/1
+Accept: application/json
+

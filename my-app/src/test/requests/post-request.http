@@ -1,0 +1,10 @@
+###登録
+POST http://localhost:8080/comedians
+Accept: application/json
+Content-Type: application/json
+
+[
+  "上田晋也",
+  null,
+  "有田哲平"
+]
